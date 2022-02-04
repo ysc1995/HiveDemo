@@ -8,6 +8,8 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 import io.agora.rtc2.Constants;
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private String token = "";
 
     private RtcEngine mRtcEngine;
+
+    private Button switchCameraBtn;
 
     private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {
         @Override
@@ -68,6 +72,14 @@ public class MainActivity extends AppCompatActivity {
                 checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID)) {
             initializeAndJoinChannel();
         }
+
+        switchCameraBtn = findViewById(R.id.switch_camera_button);
+        switchCameraBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mRtcEngine.switchCamera();
+            }
+        });
     }
 
     private void initializeAndJoinChannel() {
