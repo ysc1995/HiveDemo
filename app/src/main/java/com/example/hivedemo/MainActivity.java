@@ -19,6 +19,7 @@ import io.agora.rtc2.RtcEngineConfig;
 import io.agora.rtc2.video.ContentInspectConfig;
 import io.agora.rtc2.video.VideoCanvas;
 import io.agora.rtc2.ChannelMediaOptions;
+import io.agora.rtc2.video.VideoEncoderConfiguration;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         config.modules[0].type = ContentInspectConfig.CONTENT_INSPECT_TYPE_MODERATION; // Be sure to set type as MODERATION
         config.modules[0].vendor = ContentInspectConfig.CONTENT_INSPECT_VENDOR_HIVE; // Set Hive as the content moderation service provider
         //ToDo: change the callback url to your url
-        config.modules[0].callbackUrl = "https://webhook.site/f342bcae-1fb6-4a95-8adf-3a7d09d6ad00"; // Add the URL to receive the callbacks sent from Hive
+        config.modules[0].callbackUrl = "https://webhook.site/41948c1b-5068-463f-9926-aa971da6fb77"; // Add the URL to receive the callbacks sent from Hive
         config.modules[0].frequency = 2;   // Set content moderation to run every 2 seconds
         mRtcEngine.enableContentInspect(true, config);
 
