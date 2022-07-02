@@ -99,15 +99,26 @@ public class MainActivity extends AppCompatActivity {
         mRtcEngine.startPreview();
         mRtcEngine.setLogLevel(1);
 
+//        ContentInspectConfig config = new ContentInspectConfig();
+//        config.extraInfo = "try Hive";
+//        config.moduleCount = 1;
+//        config.ContentWorkType = ContentInspectConfig.CONTENT_INSPECT_TYPE_WORK_DEVICE_CLOUD;
+//        config.ContentWorkType = ContentInspectConfig.CONTENT_INSPECT_DEVICE_AGORA;
+//        config.modules[0].type = ContentInspectConfig.CONTENT_INSPECT_TYPE_MODERATION; // Be sure to set type as MODERATION
+//        config.modules[0].vendor = ContentInspectConfig.CONTENT_INSPECT_VENDOR_HIVE; // Set Hive as the content moderation service provider
+//        //ToDo: change the callback url to your url
+//        config.modules[0].callbackUrl = "https://webhook.site/64e02dc6-37ef-4ec9-9919-52eab79c2e91"; // Add the URL to receive the callbacks sent from Hive
+//        config.modules[0].frequency = 2;   // Set content moderation to run every 2 seconds
+//        mRtcEngine.enableContentInspect(true, config);
+
         ContentInspectConfig config = new ContentInspectConfig();
         config.extraInfo = "try Hive";
         config.moduleCount = 1;
         config.ContentWorkType = ContentInspectConfig.CONTENT_INSPECT_TYPE_WORK_DEVICE_CLOUD;
-        config.ContentWorkType = ContentInspectConfig.CONTENT_INSPECT_DEVICE_AGORA;
+        //config.DeviceWorkType = ContentInspectConfig.CONTENT_INSPECT_DEVICE_AGORA;
         config.modules[0].type = ContentInspectConfig.CONTENT_INSPECT_TYPE_MODERATION; // Be sure to set type as MODERATION
         config.modules[0].vendor = ContentInspectConfig.CONTENT_INSPECT_VENDOR_HIVE; // Set Hive as the content moderation service provider
-        //ToDo: change the callback url to your url
-        config.modules[0].callbackUrl = "https://webhook.site/41948c1b-5068-463f-9926-aa971da6fb77"; // Add the URL to receive the callbacks sent from Hive
+        config.modules[0].callbackUrl = "https://webhook.site/64e02dc6-37ef-4ec9-9919-52eab79c2e91"; // Add the URL to receive the callbacks sent from Hive
         config.modules[0].frequency = 2;   // Set content moderation to run every 2 seconds
         mRtcEngine.enableContentInspect(true, config);
 
